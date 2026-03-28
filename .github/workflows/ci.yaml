@@ -56,5 +56,5 @@ jobs:
       - name: Test application
         run: curl http://localhost:8080
 
-     - name: Check logs
-       run: docker logs app
+      - name: Check logs
+        run: docker logs app
