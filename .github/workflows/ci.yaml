@@ -54,7 +54,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/java-app:${{ needs.build.outputs.version }}
+            docker pull ${{ secrets.DOCKER_USERNAME }}/java-app:${{ steps.version.outputs.version }}
             docker stop app || true
             docker rm app || true
             docker run -d -p 8080:8080 --name app ${{ secrets.DOCKER_USERNAME }}/java-app:${{ needs.build.outputs.version }}
