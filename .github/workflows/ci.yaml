@@ -53,6 +53,7 @@ jobs:
 
       - name: Push Docker image to ECR
         run: |
+          IMAGE_URI=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/java-app:${{ steps.version.outputs.version }}
           docker push $IMAGE_URI
 
       - name: Deploy container
