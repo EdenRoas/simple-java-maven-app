@@ -33,7 +33,7 @@ jobs:
 
       #  Build JAR
       - name: Build app
-        run: mvn clean package -DskipTests
+        run: /opt/maven/bin/mvn clean package -DskipTests
 
       #  Login to AWS
       - name: Login to Amazon ECR
